@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "BulkSender Ktarze",
+  "description": "Envie mensagens personalizadas em massa pelo WhatsApp Web com planilhas Excel.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "BulkSender Ktarze",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["https://web.whatsapp.com/*", "<all_urls>"]
+    }
+  ]
+}

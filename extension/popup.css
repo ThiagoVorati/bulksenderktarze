@@ -1,0 +1,194 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  width: 360px;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f0f4f8;
+  border: 1px dashed #94a3b8;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#fileInput {
+  display: none;
+}
+
+select,
+textarea,
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: #e2e8f0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pill:hover {
+  background: #cbd5f5;
+}
+
+.helpers {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: white;
+}
+
+button.danger {
+  background: #ef4444;
+  color: white;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.preview {
+  font-size: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.preview pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.status {
+  min-height: 24px;
+  font-size: 12px;
+  color: #0f172a;
+}
+
+.status.success {
+  color: #047857;
+}
+
+.status.error {
+  color: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0f172a;
+    color: #f8fafc;
+  }
+  .card {
+    background: #1e293b;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  select,
+  textarea,
+  input[type="number"] {
+    background: #0f172a;
+    border-color: #334155;
+    color: inherit;
+  }
+  .file-label {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  .pill {
+    background: #334155;
+  }
+  .preview {
+    background: #0f172a;
+    border-color: #334155;
+  }
+}
