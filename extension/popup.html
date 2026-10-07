@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BulkSender Ktarze</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>BulkSender Ktarze</h1>
+    </header>
+
+    <section class="card">
+      <h2>1. Importar contatos</h2>
+      <label for="fileInput" class="file-label">Escolher planilha (.xlsx ou .csv)</label>
+      <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+      <div id="fileInfo" class="muted"></div>
+      <div class="field-group">
+        <label for="phoneColumn">Coluna de telefone</label>
+        <select id="phoneColumn"></select>
+      </div>
+      <div class="field-group" id="variableContainer">
+        <span>Variáveis detectadas:</span>
+        <div id="variableList" class="pill-list"></div>
+      </div>
+      <div id="preview" class="preview"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Escrever mensagem</h2>
+      <textarea id="messageTemplate" rows="6" placeholder="Olá {{Nome}}, tudo bem?"></textarea>
+      <div class="helpers">
+        <button id="insertNewLine" type="button">Adicionar quebra de linha</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3. Configurações de envio</h2>
+      <div class="field-group">
+        <label for="delayInput">Intervalo entre mensagens (segundos)</label>
+        <input type="number" id="delayInput" min="1" value="8" />
+      </div>
+      <button id="startButton" class="primary">Iniciar campanha</button>
+      <button id="stopButton" class="danger" disabled>Parar</button>
+      <div id="status" class="status"></div>
+    </section>
+  </main>
+  <script src="assets/xlsx.full.min.js"></script>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
